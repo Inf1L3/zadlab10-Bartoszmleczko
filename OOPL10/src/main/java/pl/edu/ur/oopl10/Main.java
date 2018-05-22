@@ -1,15 +1,16 @@
 package pl.edu.ur.oopl10;
 
+import java.io.IOException;
 import zad1.WprowadzZKonsoli;
 import zad3.DivideByZero;
-
+import java.util.*;
 /**
  *
  * @author mchla
  */
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         WprowadzZKonsoli wprowadz = new WprowadzZKonsoli();
         wprowadz.wprowadzInt();
                int liczby[] = { 1, 2, 3 };
@@ -31,5 +32,18 @@ public class Main {
     catch (ArithmeticException e) {
             System.out.println("Dzielenie przez 0");
         }
+   Random r = new Random();                 //zad4
+   int a = r.nextInt(21)-10;
+   int b = r.nextInt(21)-10;
+   try{
+       int wynik = a/b;
+       System.out.println(wynik);
+   }
+   catch(ArithmeticException e ){
+       System.out.println("Dzielenie przez 0");
+   }
+    WprowadzZKonsoli plik = new WprowadzZKonsoli();
+              plik.ToFileText();
+              plik.FromFileText();
 }
 }
